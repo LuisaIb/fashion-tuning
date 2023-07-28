@@ -1,0 +1,4 @@
+# ignore virtual environment
+*.env
+# ignore models
+*.h5
