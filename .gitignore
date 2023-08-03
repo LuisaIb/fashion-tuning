@@ -2,3 +2,5 @@
 *.env
 # ignore models
 *.h5
+# ignore experiment run data
+/runs
