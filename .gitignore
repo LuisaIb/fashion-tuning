@@ -1,7 +1,14 @@
 # ignore virtual environment
 *.env
+*.venv
 # ignore models
 *.h5
+*.pkl
+*.pt
 # ignore experiment run data
 /runs
 /tune_runs
+# caching
+__pycache__
+# logs
+*.log
