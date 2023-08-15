@@ -27,7 +27,7 @@ Dataset: https://www.kaggle.com/datasets/die9origephit/nike-adidas-and-converse-
 
 ---
 
-**Besprechung - 15.08.2023:**
+**Besprechung - 15.08.2023:**<br>
 Weitere Planung / Agenda - Präsentation:
 <ul>
   <li>Problemstellung / Ausgangslage: Was ist FashionMNIST? Woher kommen die Daten? -> Zalando -> Benchmark Datensatz -> s. Paper zu Datensatz (+ Quellen) => Image Classiication + multi class (non binary) -> vllt. auf Metriken eingehen</li>
