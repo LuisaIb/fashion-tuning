@@ -1,8 +1,8 @@
 # shoe-tuning
-Hyperparameter Tuning of different Machine Learning models for image classification of shoe dataset.
+Hyperparameter Tuning of a Convolutional Neural Network for image classification of the Fashion MNIST dataset.
 
 ---
-Dataset: https://www.kaggle.com/datasets/die9origephit/nike-adidas-and-converse-imaged?resource=download
+Dataset: https://www.kaggle.com/datasets/zalando-research/fashionmnist
 
 ---
 **Aufgabenstellung:**<br>
