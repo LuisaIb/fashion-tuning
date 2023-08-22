@@ -4,8 +4,8 @@
             "type": "int",
             "default": 7,
             "transform": "transform_power_2_int",
-            "lower": 7,
-            "upper": 7
+            "lower": 5,
+            "upper": 8
         },
         "lr_mult": {
             "type": "float",
@@ -16,17 +16,24 @@
         },
         "batch_size": {
             "type": "int",
-            "default": 5,
+            "default": 6,
             "transform": "transform_power_2_int",
             "lower": 4,
             "upper": 7
         },
         "epochs": {
-            "type": "int",
-            "default": 3,
-            "transform": "transform_power_2_int",
-            "lower": 1,
-            "upper": 4
+            "levels": [
+                5,
+                10,
+                15,
+                20
+            ],
+            "type": "factor",
+            "default": 15,
+            "transform": "None",
+            "core_model_parameter_type": "int",
+            "lower": 0,
+            "upper": 3
         },
         "k_folds": {
             "type": "int",
