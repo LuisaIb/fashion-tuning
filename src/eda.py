@@ -43,6 +43,7 @@ class EDA:
             ax = axes[class_label // cols, class_label % cols]
             ax.imshow(random_image[0], cmap='gray')
             ax.set_title(self.class_labels[class_label])
+            ax.set_title(self.class_labels[class_label], fontdict={'color': '#ff6900'})
             ax.axis('off')
 
         plt.show()
@@ -54,10 +55,12 @@ class EDA:
         
         # Create a bar plot to visualize the class distribution
         plt.figure(figsize=(10, 6))
-        plt.bar(self.class_labels, class_counts)
+        plt.bar(self.class_labels, class_counts, color='#ff6900')
         plt.xlabel('Class')
         plt.ylabel('Number of Samples')
-        plt.title('Class Distribution')
+        plt.title('Class Distribution', fontweight='bold')
+        plt.gca().spines['top'].set_visible(False)    
+        plt.gca().spines['right'].set_visible(False)
         plt.xticks(rotation=45)
         plt.show()
     
@@ -74,11 +77,15 @@ class EDA:
 
         # Create a bar plot to visualize the average black pixels per class
         plt.figure(figsize=(10, 6))
-        bars = plt.bar(self.class_labels, class_pixel_averages)
+        bars = plt.bar(self.class_labels, class_pixel_averages, color='#ff6900')
         plt.xlabel('Class')
         plt.ylabel('Average Black Pixels')
-        plt.title('Average Black Pixels per Class in Fashion MNIST')
+        plt.yticks([]) 
+        plt.title('Average Black Pixels per Class in Fashion MNIST', fontweight='bold')
         plt.xticks(rotation=45)
+        plt.gca().spines['top'].set_visible(False)    
+        plt.gca().spines['right'].set_visible(False)
+        plt.gca().spines['left'].set_visible(False)
 
         # Add pixel count labels on top of the bars
         for bar, pixel_count in zip(bars, class_pixel_averages):
