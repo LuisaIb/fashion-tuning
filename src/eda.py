@@ -4,6 +4,8 @@ from torchvision.transforms import transforms
 import matplotlib.pyplot as plt
 import numpy as np
 import random
+import plotly.graph_objects as go
+import torch
 
 class EDA:
     def __init__(self) -> None:
@@ -54,16 +56,24 @@ class EDA:
         class_counts = torch.bincount(dataset.targets, minlength=10)
         
         # Create a bar plot to visualize the class distribution
-        plt.figure(figsize=(10, 6))
-        plt.bar(self.class_labels, class_counts, color='#ff6900')
-        plt.xlabel('Class')
-        plt.ylabel('Number of Samples')
-        plt.title('Class Distribution', fontweight='bold')
-        plt.gca().spines['top'].set_visible(False)    
-        plt.gca().spines['right'].set_visible(False)
-        plt.xticks(rotation=45)
-        plt.show()
-    
+        fig = go.Figure(data=[go.Bar(
+            x=self.class_labels,
+            y=class_counts,
+            marker_color='#ff6900'
+        )])
+
+        fig.update_layout(
+            xaxis_title='Class',
+            yaxis_title='Number of Samples',
+            title='Class Distribution',
+            xaxis=dict(tickangle=45),
+            showlegend=False,
+            margin=dict(t=80, b=80, l=80, r=80)
+        )
+
+        fig.show()
+
+
     # Function to display average black pixels
     def display_average_black_pixels(self, dataset):
         # Calculate the average number of black pixels per class
@@ -76,23 +86,35 @@ class EDA:
             class_pixel_averages.append(class_black_pixels.float().mean().item())
 
         # Create a bar plot to visualize the average black pixels per class
-        plt.figure(figsize=(10, 6))
-        bars = plt.bar(self.class_labels, class_pixel_averages, color='#ff6900')
-        plt.xlabel('Class')
-        plt.ylabel('Average Black Pixels')
-        plt.yticks([]) 
-        plt.title('Average Black Pixels per Class in Fashion MNIST', fontweight='bold')
-        plt.xticks(rotation=45)
-        plt.gca().spines['top'].set_visible(False)    
-        plt.gca().spines['right'].set_visible(False)
-        plt.gca().spines['left'].set_visible(False)
+        fig = go.Figure(data=[go.Bar(
+            x=self.class_labels,
+            y=class_pixel_averages,
+            marker_color='#ff6900'
+        )])
+
+        fig.update_layout(
+            xaxis_title='Class',
+            yaxis_title='Average Black Pixels',
+            yaxis=dict(showticklabels=False),
+            title='Average Black Pixels per Class in Fashion MNIST',
+            xaxis=dict(tickangle=45),
+            showlegend=False,
+            margin=dict(t=80, b=80, l=80, r=80)
+        )
 
         # Add pixel count labels on top of the bars
-        for bar, pixel_count in zip(bars, class_pixel_averages):
-            plt.text(bar.get_x() + bar.get_width() / 2, bar.get_height(), f'{pixel_count:.2f}', ha='center', va='bottom')
+        for i, pixel_count in enumerate(class_pixel_averages):
+            fig.add_annotation(
+                x=self.class_labels[i],
+                y=pixel_count,
+                text=f'{pixel_count:.2f}',
+                showarrow=True,
+                arrowhead=2,
+                arrowcolor='#000000',
+                arrowsize=1,
+                arrowwidth=2            )
 
-        plt.tight_layout()
-        plt.show()
+        fig.show()
 
     def _output_label(self, label):
         output_mapping = {

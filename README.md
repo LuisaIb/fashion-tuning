@@ -31,7 +31,7 @@ Dataset: https://www.kaggle.com/datasets/zalando-research/fashionmnist
 Weitere Planung / Agenda - Präsentation:
 <ul>
   <li>Problemstellung / Ausgangslage: Was ist FashionMNIST? Woher kommen die Daten? -> Zalando -> Benchmark Datensatz -> s. Paper zu Datensatz (+ Quellen) => Image Classiication + multi class (non binary) -> vllt. auf Metriken eingehen</li>
-  <li>EDA (5min), Größe Datensatz, beispielhafte Bilder, wie Aufbau von Datensatz, Balance der Klassen, Pixel Angaben nennen</li>
+  <li>EDA (5min), Größe Datensatz, beispielhafte Bilder, wie Aufbau von Datensatz, Balance der Klassen, Pixel Angaben nennen (subplot für Training und Testdatensatz)</li>
   <li> Data Preparation erwähnen</li>
   <li>Metriken (Accuracy (vllt. Balanced Acc), Loss Function (CrossEntropy)) nennen (evtl. + Laufzeit evtl. von Tuning / Inferenz als Begründung)</li>
   <li>CNN Model vorstellen, warum CNN genommen, vllt. Architektur </li> 
@@ -44,7 +44,7 @@ Weitere Planung / Agenda - Präsentation:
   <li>konzentrieren Hyperparameter Tuning, weil Architecture Search ressourcen aufwändig, in mehreren Paper für NAS gute Ergebnisse bereits gefunden (generell: nicht so klar voneinander trennbar) </li>
   <li>betrachtete Parameter vorstellen: lr, epochs, batchsize - vllt. weitere Parameter auch nennen wie dropout, optimizer</li>
   <li>Epochs, LR, batchsize genauer vorstellen & Einflüsse nennen zusammen mit gewählten Parameter Ranges</li>
-  <li>initiale Architektur vorstellen mit Grafik (vllt. aus Paper mit gutem NAS) -> d.h. Begründung, mit default Werten (Industrie Standard) initiale Architektur durchlaufen gelassen - Ergebnis vorstellen -> Kann man das besser oder schlechter machen?</li>
+  <li>initiale Architektur vorstellen mit Grafik (vllt. aus Paper mit gutem NAS) -> d.h. Begründung, mit default Werten (Industrie Standard) initiale Architektur durchlaufen gelassen - Ergebnis vorstellen -> Kann man das besser oder schlechter machen? (PowerPoint Grafik s. Notebook für Input)</li>
   <li>Hardware nennen, Rechenzeit festlegen und technische Vorgehensweise (Tensorboard, Tune, RandomSeed etc.)</li>
   <li>die durchgelaufenen Trials vorstellen, Grund warum weiter gehen -> RandomSearch in Anbetracht der Laufzeit / Hardware Ressourcen sehr ineffizient</li>
   <li>Hardware Ressourcen besser zu verwenden? -> Scheduler</li>
@@ -59,4 +59,27 @@ Weitere Planung / Agenda - Präsentation:
   <li>Parameter Plots (kontur etc.) für die drei Tuning Durchläufe (bspw. auf eine Folie)
   <li>Boxplots von jedem Tuning beste Trial rausnehmen und plotten für die 2 Tunings + Default</li>
   <li>Bewertung und Schlussfolgerung: generelle / allgemeine Schlussfolgerungen auf NNs bezogen, Rechenleistung, Parameter (Architektur), etwas positives Richtung SMBO, etwas Richtung FashionMNIST, etw. über den Einfluss von den Parametern aus den Plots, Trade-Off zwischen Ergebnis und Rechenleistung, vllt. Takeaway Use Case bezogen (Zalando)</li> 
+</ul>
+
+update:
+<ul>
+  <li>Parameter vorstellen</li>
+  <li>Ansätze vorstellen</li>
+  <li>Best Configs vorstellen der einzelnen Ansätze (Accuracy rauslassen) (vllt. Hyperband erklären anhand von Epochen Plots)</li>
+  <li>default config vs tuning config in Bezug auf die learning rate; RandomSampling niedrige EpochenZahl; generell kleine BatchSize gut</li>
+  <li>Überleitung zu den Abhängigkeiten der Parameter</li>
+  <li>Parallel Plots - chronologisch durchgehen -> mit l1 und Batch Size Verbindungen anschauen</li>
+  <li>l1 & Batch Size - Scatter Plot + gefüllte Grafik zeigen und interpretieren</li>
+  <li>l1 und epochen - kein wirklicher Zusammenhang kurz aufsagen</li>
+  <li>batch size und epochen - Ausgleich von Batch Size mit Epochen (scatter plot + ausgefüllt)</li>
+  <li>loguniform Grafik für Erklärung</li>
+  <li>learning rate und batch size</li>
+  <li>learning rate und epochen</li>
+  <li>Importance Plot von Spot</li>
+  <li>Box Plots Accuracy</li>
+  <li>Klassen Accuracy Ergebnisse (Bar Chart)</li>
+  <li>Überleitung zum Fazit: Was bringt das für das Problem?</li>
+  <li>Fazit: learning rate sehr empfindlich</li>
+  <li>Smapling der Werte für Tuning</li>
+  <li>Ausblick: Optimizer, Dropout nicht angeschaut etc.</li>
 </ul>
