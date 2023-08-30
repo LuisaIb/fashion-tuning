@@ -89,30 +89,20 @@ class EDA:
         fig = go.Figure(data=[go.Bar(
             x=self.class_labels,
             y=class_pixel_averages,
-            marker_color='#ff6900'
+            marker_color='#ff6900',
+            text=[f'{pixel_count:.2f}' for pixel_count in class_pixel_averages],  # Only the numerical values
+            textposition='auto'  # Position the text on top of the bars
+
         )])
 
         fig.update_layout(
-            xaxis_title='Class',
-            yaxis_title='Average Black Pixels',
             yaxis=dict(showticklabels=False),
             title='Average Black Pixels per Class in Fashion MNIST',
+            titlefont=dict(size=16, color='#000000'),
             xaxis=dict(tickangle=45),
             showlegend=False,
-            margin=dict(t=80, b=80, l=80, r=80)
+            margin=dict(t=80, b=80, l=60, r=80)
         )
-
-        # Add pixel count labels on top of the bars
-        for i, pixel_count in enumerate(class_pixel_averages):
-            fig.add_annotation(
-                x=self.class_labels[i],
-                y=pixel_count,
-                text=f'{pixel_count:.2f}',
-                showarrow=True,
-                arrowhead=2,
-                arrowcolor='#000000',
-                arrowsize=1,
-                arrowwidth=2            )
 
         fig.show()
 
