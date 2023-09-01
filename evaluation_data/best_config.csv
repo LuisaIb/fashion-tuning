@@ -1,0 +1,5 @@
+,L1 Units,Batch Size,Epochs,Learning Rate,# Trials
+Default,64,64,15,0.001,-
+Random Search,128,16,10,0.0540345965,87 (~6h)
+Hyperband,128,16,15,0.0985379226,340 (~6h)
+SMBO,256,32,10,0.09117919068885172,68 (~6h)
