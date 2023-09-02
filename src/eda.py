@@ -156,6 +156,12 @@ class EDA:
         fig.update_xaxes(tickfont_color='#000000', row=1, col=1)
         fig.update_xaxes(tickfont_color='#000000', row=2, col=1)
 
+        # change color of bar labels
+        for trace in fig.data:
+            trace.marker.color = '#ff6900'
+            trace.textfont.color = '#000000'
+        
+
         fig.show()
 
     def _output_label(self, label):
