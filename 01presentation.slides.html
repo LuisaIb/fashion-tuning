@@ -16572,12 +16572,37 @@ if (outputEl) {{
     <span style="color: #ff6900; font-size: 40px; font-weight: bold;">Conclusion</span>
     <span style="text-align: right; font-size: 12px;">Lena Hammerer | Luisa Ibele | Hanna Steinwender</span>
 </div></p>
-<p style="font-size: 18px;"><i>Providing a Summary and Key Takeaways, as well as offering Insights and Recommendations for Future Work</i></p><ul>
-    <li>Fazit: learning rate sehr empfindlich</li>
-    <li>Smapling der Werte für Tuning</li>
-    <li>Ausblick: Optimizer, Dropout nicht angeschaut etc.</li>
-</ul><p>Weitere Ideen: Trade-Off Performance vs. Runtime, mostly no general accepted default hyperparemters for DNNs, Allgemeine Gefahr Overfitting, Ease of Implementation (e.g. Random Search is very easy to start with, SMBO not so much)</p>
-
+<p style="font-size: 18px;"><i>Providing a Summary and Key Takeaways, as well as offering Insights and Recommendations for Future Work</i></p><p><span style="color: #ff6900; font-size: 25px; font-weight: bold;">Key Takeaways</span></p>
+<ul>
+    <li>Project shows the importance of fine-tuning for achieving better performance</li>
+    <li>The utilization of three distinct approaches - Random Search, Hyperband, and SMBO - provided comprehensive insights into the various methodologies of tuning and collectively contributed to a deeper understanding.</li>
+    <li>Fashion-MNIST is a valuable benchmark dataset for such experiments</li>
+    <li>learning_rate is a very sensitive hyperparameter</li>
+    <li>l1 hyperparameter is not so sensitive in this use case </li>
+    <li>The kind of sampling for the hyperparameter plays a role</li>
+    <li>Mostly no general accepted default hyperparemters for DNNs</li>
+    <li>Trade-Off Performance vs. Runtime</li>
+    <li>Risk of Overfitting</li>
+    <li>Ease of Implementation (Random Search -> SMBO)</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+    <span style="color: #ff6900; font-size: 25px; font-weight: bold;">Outlook</span>
+    <span style="text-align: right; font-size: 12px;">Lena Hammerer | Luisa Ibele | Hanna Steinwender</span>
+</div><ul>
+    <li>Looking at further parameters like optimizer or dropout</li>
+    <li>Consider other metrics like precision, recall, F1-score or the confusion matrix in general</li>
+    <li>Explore other techniques like Neural Architecture Search or Ensemble Methods</li>
+    <li>Assess the transferability of insights gained from the hyperparameter tuning on Fashion MNIST to other image classification datasets</li>
+</ul>
 </div>
 </div>
 </div>
