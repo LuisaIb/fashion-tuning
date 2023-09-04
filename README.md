@@ -13,3 +13,6 @@ In this project, the task was to solve a problem chosen from the field of machin
 
 ---
 Dataset: https://www.kaggle.com/datasets/zalando-research/fashionmnist
+
+---
+Final Notebook: 01presentation.ipynb | 01presentation.slides.html
