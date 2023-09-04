@@ -1,7 +1,7 @@
 # fashion-tuning
 <h2>Examination of the Lecture <i>Advanced Applied Machine Learning</i> @DHBW Ravensburg.</h2>
-
-<h3>Hyperparameter Tuning of a Convolutional Neural Network for image classification of the Fashion MNIST dataset.</h3>
+---
+Hyperparameter Tuning of a Convolutional Neural Network for image classification of the Fashion MNIST dataset.
 
 ---
 <b>Task:</b> Empirical Solution of a Hyperparameter Tuning Machine Learning Problem<br>
