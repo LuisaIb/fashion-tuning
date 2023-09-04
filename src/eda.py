@@ -36,7 +36,7 @@ class EDA:
     def display_random_images(self, num_images=5):
         # Display a random image from each class
         rows, cols = 2, 5
-        fig, axes = plt.subplots(rows, cols, figsize=(12, 6))
+        fig, axes = plt.subplots(rows, cols, figsize=(8, 2))
         fig.tight_layout()
 
         for class_label in range(10):
