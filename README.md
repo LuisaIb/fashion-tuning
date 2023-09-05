@@ -1,5 +1,5 @@
 # fashion-tuning
-<h2>Examination of the Lecture <i>Advanced Applied Machine Learning</i> @DHBW Ravensburg.</h2>
+<h2>Examination of the Lecture <i>Aktuelle Data Science-Entwicklungen: Tuning von Algorithmen</i> @DHBW Ravensburg.</h2>
 
 ---
 Hyperparameter Tuning of a Convolutional Neural Network for image classification of the Fashion MNIST dataset.
