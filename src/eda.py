@@ -36,7 +36,7 @@ class EDA:
     def display_random_images(self, num_images=5):
         # Display a random image from each class
         rows, cols = 2, 5
-        fig, axes = plt.subplots(rows, cols, figsize=(8, 2))
+        fig, axes = plt.subplots(rows, cols, figsize=(9,4))
         fig.tight_layout()
 
         for class_label in range(10):
@@ -48,7 +48,8 @@ class EDA:
             ax.set_title(self.class_labels[class_label])
             ax.set_title(self.class_labels[class_label], fontdict={'color': '#ff6900'})
             ax.axis('off')
-
+        
+        # plt.savefig('random_images', bbox_inches='tight')
         plt.show()
 
     # Function to display class distribution
